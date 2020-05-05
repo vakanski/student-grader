@@ -19,7 +19,7 @@ if (empty($input_name)) {
     $name_err = "Please enter valid name.";
 } else {
     $name = $input_name;
-    echo $name;
+    
 }
 
 
@@ -27,7 +27,7 @@ if (empty(trim($_POST['course']))) {
     $course_err = 'Please enter course';
 } else {
     $course = trim($_POST['course']);
-    echo $course;
+    
 }
 
 
@@ -37,7 +37,7 @@ if (empty(trim($_POST['grade']))) {
     $grade_err = 'Please enter a numeric grade';
 } else {
     $grade = trim($_POST['grade']);
-    echo $grade;
+   
 }
 
     if(empty($name_err) && empty($course_err) && empty($grade_err)) {
@@ -55,8 +55,10 @@ if (empty(trim($_POST['grade']))) {
         }
 
         if($stmt->execute()) {
+
             header("location: index.php");
             exit();
+            
         } else {
             echo "Something went wrong ";
 

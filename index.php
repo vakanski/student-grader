@@ -34,10 +34,10 @@ require_once "config.php";
             $sql = "SELECT * FROM students";
             if ($result = $pdo->query($sql)) {
                 if ($result->rowCount() > 0) {
-
+                    $i=1;
                     while ($row = $result->fetch()) { ?>
-                        <tr>
-                            <th scope="row"><?php echo $row['id']; ?></td>
+                        <tr class="row-<?php echo $i ?>">
+                            <th scope="row"><?php echo $i; ?></td>
                             <td><?php echo $row['name']; ?></td>
                             <td><?php echo $row['course']; ?></td>
                             <td><?php echo $row['grade']; ?></td>
@@ -47,7 +47,7 @@ require_once "config.php";
                                 <a href="delete-record.php?id=<?php echo $row['id'] ?>"><i class="far fa-trash-alt text-primary"></i></a>
                             </td>
                         </tr>
-                    <?php } ?>
+                    <?php $i=$i+1; } ?>
         </table>
             <?php
                     unset($result);

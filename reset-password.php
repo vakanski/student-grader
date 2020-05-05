@@ -49,14 +49,8 @@ if(empty(trim($_POST["confirm_password"]))){
     unset($pdo);
 } // end if post
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Reset Password</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
-</head>
-<body>
+
+<?php require_once 'site/header.php'; ?>
     <div class="container">
         <div class="row">
             <div class="col-sm">
@@ -83,5 +77,7 @@ if(empty(trim($_POST["confirm_password"]))){
             </div>
             <div class="col-sm">
             </div>
-</body>
-</html>
+
+        </div>
+    </div>
+            <?php require_once 'site/footer.php'; ?>
